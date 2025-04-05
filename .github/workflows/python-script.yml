@@ -3,9 +3,9 @@ name: Run Python script
 on:
   schedule:
     # Chạy mỗi ngày lúc 09:15 UTC
-    - cron: '33 23 * * *'
+    - cron: '36 23 * * *'
     # Chạy mỗi ngày lúc 15:00 UTC
-    - cron: '35 23 * * *'
+    - cron: '38 23 * * *'
   workflow_dispatch:  # Cho phép bạn chạy thủ công từ GitHub UI
 
 jobs:
@@ -28,4 +28,4 @@ jobs:
 
     - name: Run script
       run: |
-        python your_script.py  # Thay 'your_script.py' bằng tên file script của bạn
+        python gold.py  # Thay 'your_script.py' bằng tên file script của bạn
