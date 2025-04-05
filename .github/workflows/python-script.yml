@@ -1,16 +1,15 @@
 name: Run Python script
 
 on:
+  push:
+    branches: [ main ] # Workflow sẽ chạy khi có push lên nhánh main
   schedule:
     # Chạy mỗi ngày lúc 09:15 UTC
     - cron: '13 17 * * *'
-    # Chạy mỗi ngày lúc 15:00 UTC
-    - cron: '15 17 * * *'
-  workflow_dispatch:  # Cho phép bạn chạy thủ công từ GitHub UI
 
 jobs:
   run-script:
-    runs-on: ubuntu-latest  # Chạy trên môi trường Ubuntu
+    runs-on: windows-latest  # Chạy trên môi trường Ubuntu
 
     steps:
     - name: Checkout repository
