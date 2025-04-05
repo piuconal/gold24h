@@ -54,14 +54,13 @@ def get_world_gold_price():
         return f"Thế giới: {world_gold_price}"
     return None
 
-def job():
-    current_time = datetime.now(tz=None).strftime('%H:%M:%S %d/%m/%Y')
-    print(f"Running job at: {current_time} (Hanoi Time)")
+def main():
+    current_time = datetime.now().strftime('%H:%M:%S %d/%m/%Y')
     btmc_price = get_btmc_price()
     phuquy_price = get_phuquy_price()
     world_gold_price = get_world_gold_price()
 
-    message = f"⏰ {current_time} (Hanoi)\n"
+    message = f"{current_time}\n"
 
     if btmc_price:
         message += f"🔴 {btmc_price}\n"
@@ -73,8 +72,4 @@ def job():
     send_telegram_message(message)
 
 if __name__ == "__main__":
-    schedule.every().day.at("00:48").do(job)
-    print("Gold price notification scheduler started. Next run at 00:45 daily (Hanoi Time).")
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    main()
