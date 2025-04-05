@@ -5,7 +5,10 @@ on:
     branches: [ main ] # Workflow sẽ chạy khi có push lên nhánh main
   schedule:
     # Chạy mỗi ngày lúc 09:15 UTC
-    - cron: '13 17 * * *'
+    - cron: '30 17 * * *'
+    - cron: '30 8 * * *'
+    - cron: '30 2 * * *'
+    - cron: '30 5 * * *'
 
 jobs:
   run-script:
@@ -13,10 +16,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Checkout mã nguồn từ repository của bạn
+      uses: actions/checkout@v4  # Checkout mã nguồn từ repository của bạn
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'  # Sử dụng Python phiên bản 3.x
 
