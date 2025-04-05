@@ -73,7 +73,7 @@ def job():
     send_telegram_message(message)
 
 if __name__ == "__main__":
-    schedule.every().day.at("00:45").do(job)
+    schedule.every().day.at("00:48").do(job)
     print("Gold price notification scheduler started. Next run at 00:45 daily (Hanoi Time).")
     while True:
         schedule.run_pending()
