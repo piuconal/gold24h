@@ -1,11 +1,9 @@
 name: Run Python script
 
 on:
-  push:
-    branches: [ main ] # Workflow sẽ chạy khi có push lên nhánh main
   schedule:
     # Chạy mỗi ngày lúc 09:15 UTC
-    - cron: '30 17 * * *'
+    - cron: '32 17 * * *'
     - cron: '30 8 * * *'
     - cron: '30 2 * * *'
     - cron: '30 5 * * *'
