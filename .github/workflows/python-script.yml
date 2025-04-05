@@ -1,31 +1,27 @@
-name: Run Python script
+name: Gold 24h
 
 on:
   schedule:
-    # Chạy mỗi ngày lúc 09:15 UTC
-    - cron: '32 17 * * *'
-    - cron: '30 8 * * *'
-    - cron: '30 2 * * *'
-    - cron: '30 5 * * *'
+    - cron: '* * * * *'
 
 jobs:
   run-script:
-    runs-on: windows-latest  # Chạy trên môi trường Ubuntu
+    runs-on: windows-latest  
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4  # Checkout mã nguồn từ repository của bạn
+      uses: actions/checkout@v4 
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'  # Sử dụng Python phiên bản 3.x
+        python-version: '3.x'  
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt  # Cài đặt các thư viện từ requirements.txt
+        pip install -r requirements.txt 
 
     - name: Run script
       run: |
-        python gold.py  # Thay 'your_script.py' bằng tên file script của bạn
+        python gold.py  
