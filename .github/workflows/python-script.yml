@@ -1,8 +1,9 @@
 name: Gold 24h
 
 on:
-  schedule:
-    - cron: '0 0,6,12 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   run-script:
