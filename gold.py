@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import schedule
 import time
 from datetime import datetime
+import pytz
+
 
 def send_telegram_message(message):
     bot_token = '8076360823:AAH9bk5Bewzd3IEU9HZVcvddNniQB8Q6uLY' 
@@ -55,7 +57,8 @@ def get_world_gold_price():
     return None
 
 def main():
-    current_time = datetime.now().strftime('%H:%M:%S %d/%m/%Y')
+    hanoi_tz = pytz.timezone('Asia/Ho_Chi_Minh')
+    current_time = datetime.now(hanoi_tz).strftime('%H:%M:%S %d/%m/%Y')
     btmc_price = get_btmc_price()
     phuquy_price = get_phuquy_price()
     world_gold_price = get_world_gold_price()
